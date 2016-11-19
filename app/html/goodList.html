@@ -1,0 +1,39 @@
+<div style="margin-left:215px; width:70%;">
+ <div>
+   <h1>List rock Employees</h1>
+   <ul class="heroes">
+     <li *ngFor="let employee of goodemployees"
+         [class.selected]="employee === selectedHero"
+         (click)="onSelect(employee)">
+
+       <span class="badge">{{employee.getId}}</span> {{employee.getFullName}}
+     </li>
+   </ul>
+   <br/>
+ </div>
+   <br/>
+   <h1>Detail rock Employee</h1>
+   <div *ngIf="employee">
+     <h2>Details!</h2>
+     <div>
+       <label>{{employee.getDetailInfo}}</label>
+     </div>
+   </div>
+   <br/>
+   <my-employee-detail [employee]="selectedHero"></my-employee-detail>
+   <div id="host">
+     my div
+     </div>
+     <template simpleTimer id="hungnt">
+       ..sdsadasd
+     </template>
+   <div #container 
+             class="container"
+             (mousemove)="onMouseMove($event)">
+            <div #draggable 
+                 class="draggable"
+                 (mousedown)="onMouseButton($event)"
+                 (mouseup)="onMouseButton($event)">
+            </div>
+        </div>
+ </div>

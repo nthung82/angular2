@@ -1,0 +1,31 @@
+<div style="margin-left:215px; width:70%;">
+
+<!--
+using model mapping
+-->
+<input [(ngModel)]="aNewEmployee.firstName" placeholder="First Name" id="firstName"  maxlength="20" size="20" class="myInput"/>
+		<br/>
+		<input [(ngModel)]="middleName" placeholder="Middle Name" id="middleName" maxlength="20" size="20" class="myInput"/>
+		<br/>
+		<input [(ngModel)]="aNewEmployee.lastName" placeholder="Last Name" id="lastName" maxlength="20" size="20" class="myInput"/>
+      </div>
+ <div  style="margin-left:215px; width:40%;">
+	<button class="button"(click)="addNew()">Add New</button>
+	</div>
+	<div  style="margin-left:215px; width:40%;">
+	<input [(ngModel)]="ID" placeholder="ID of Good Employee" id="ID" maxlength="4" size="4" class="myInput"/>
+    <button class="button"(click)="addGoodEmployee()">Add Good Employee</button>
+
+	</div>
+ <div>
+    <ul class="heroes">
+      <li *ngFor="let employee of myEmployees"
+        [class.selected]="employee === selectedHero"
+        (click)="onSelect(employee)">
+        <span class="badge">{{employee.getId}}</span> {{employee.getFullName}}
+      </li>
+    </ul>
+   <br/>
+   <my-employee-detail [employee]="selectedHero"></my-employee-detail>
+   <br/>
+	 </div>
